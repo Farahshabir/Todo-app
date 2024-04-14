@@ -1,9 +1,10 @@
 {
-  "name": "todo-app",
-  "type": "module",
-  "version": "1.0.0",
+  "name": "fs-todo-app",
+   "version": "1.0.1",
   "description": "",
-  "main": "index.js",
+  "main": "main.js",
+  "type":"module",
+  "bin": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

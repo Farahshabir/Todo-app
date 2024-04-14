@@ -1,4 +1,6 @@
+#! /usr/bin/env node
 import inquirer from "inquirer";
+//import chalk from "chalk";
 let todos = ["tea", "coffee"];
 async function createTodo(todos) {
     do {
@@ -15,7 +17,7 @@ async function createTodo(todos) {
                 name: "todo",
             });
             todos.push(addTodo.todo);
-            todos.forEach(todo => console.log(todo));
+            todos.forEach((todo) => console.log(todo));
             // console.log(todos);
         }
         if (ans.select == "update") {
@@ -23,14 +25,14 @@ async function createTodo(todos) {
                 type: "list",
                 message: "update items in the list",
                 name: "todo",
-                choices: todos.map(item => item)
+                choices: todos.map((item) => item),
             });
             let addTodo = await inquirer.prompt({
                 type: "input",
                 message: "Add items in the list",
                 name: "todo",
             });
-            let newTodo = todos.filter(val => val !== updateTodo.todo);
+            let newTodo = todos.filter((val) => val !== updateTodo.todo);
             todos = [...newTodo, addTodo.todo];
             console.log(todos);
         }
@@ -44,9 +46,9 @@ async function createTodo(todos) {
                 type: "list",
                 message: "delete items from the list",
                 name: "todo",
-                choices: todos.map(item => item)
+                choices: todos.map((item) => item),
             });
-            let newTodo = todos.filter(val => val !== deleteTodo.todo);
+            let newTodo = todos.filter((val) => val !== deleteTodo.todo);
             todos = [...newTodo];
             console.log(todos);
         }
